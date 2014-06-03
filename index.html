@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.css">
+		<meta charset="UTF-8">
+		<title>Form Tester</title>
+	</head>
+	<body>
+		<div class="container-fluid v-align">
+		  <div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="well">
+						<form onsubmit = "$('#myModal').modal();" action="" method="post" role="form" name="booking">
+						    <fieldset>
+						        <legend>Sign Up</legend>
+						        <span class="help-block">Please fill out the form below to sign up for our social network. Canada/U.S. only currently.</span>
+						        <span class="help-block">All fields are required.</span>
+						        <!-- Regex is used here to validate first names. A name can be hyphenated, but no numbers are allowed. A name must be over two letters.-->
+						        <div class="form-group">
+						            <label for="fname">First Name</label>
+						            <input type="text" id="fname" name="first-name" class = "form-control" value="" aria-label="First name input field" aria-required="true" placeholder = "E.g. Mohamed" pattern="[A-Z-a-z]+[-a-zA-Z]+"  title="First Name - Letters Only" required>
+						        </div>
+						        <!-- Regex is used here to validate last names. A name can be hyphenated, but no numbers are allowed. A name must be over two letters.-->
+						        <div class="form-group">
+						            <label for="lname">Last Name</label>
+						            <input type="text" id="lname" name="last-name" class = "form-control" value="" aria-label="Last name input field" aria-required="true" placeholder = "E.g. Farazi" pattern="[A-Z-a-z]'?[- a-zA-Z]+"  title="Last Name - Letters Only" required>
+						        </div>
+						        <!-- Min/Max HTML5 form components are used here to validate that the person is between 18-50. -->
+						        <div class="form-group">
+						            <label for="age">Age</label>
+						            <input type="number" id = "age" name="quantity" class = "form-control" aria-label="Age input field - must be between 18-50" aria-required="true" title="You must be between 18-50 to submit this form." min="18" max="50" placeholder="E.g. 20" required>
+						        </div>
+						        <!-- Regex is used here to validate countries so that no special characters/numbers are allowed. -->
+							      <div class="form-group" id="country">
+							      	<label for="countries">Country</label>
+							       	<input type="text" id = "countries" class="form-control typeahead" aria-label="Country input field" aria-required="true" placeholder="E.g. Canada" pattern="[a-zA-Z ]+" title="Please input your country - Letters only" required>
+							      </div>
+							      <!-- Regex is used here to validate provinces/states so that no special characters/numbers are allowed. -->
+							      <div class="form-group" id="province">
+							      	<label for="prov">Province/State</label>
+							       	<input type="text" id = "prov" class="form-control typeahead" aria-label="Province or State input field" aria-required="true" placeholder="E.g. Ontario" pattern="[a-zA-Z ]+" title="Please input your province/state - Letters only" required>
+							      </div>
+						        <button type="submit" id = "submit-button"class="btn btn-default btn-block">Submit</button>
+				            <div class="modal fade" id="myModal">
+				              <div class="modal-dialog">
+				                <div class="modal-content">
+				                  <div class="modal-body">
+				                    <p>Thank you for signing up with us. Your profile has been added to our social network. Have a great day.</p>
+				                  </div>
+				                  <div class="modal-footer">
+				                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				                  </div>
+				                </div>
+				              </div>
+				            </div>
+						    </fieldset>
+						</form>
+					</div>
+		  	</div>
+			</div>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/typeahead.js"></script>
+		<script src="js/custom.js"></script>
+	</body>
+</html>
+
